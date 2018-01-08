@@ -1,5 +1,9 @@
 
 <h1>my quote</h1>
 <ul>
-  <li *ngFor='let quote of quote' > {{quote.name}} </li>
+  <div *ngFor='let quote of quote; let i = index '>
+  <li> {{quote.name}} </li>
+  <button  (click)='toogleDetails(i)'>Toogle Details</button>
+  <app-quote-details [quote]='quote'></app-quote-details>
+</div>
 </ul>

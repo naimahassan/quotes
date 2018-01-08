@@ -7,8 +7,11 @@ import {Quote} from '../quote'
 })
 export class QuoteComponent implements OnInit {
   quote = [
-    new Quote(1, 'ignorance is blis'),
+    new Quote(1, 'ignorance is bliss', 'treasure it'),
   ]
+  toogleDetails(index){
+    this.quote[index].showDescription = !this.quote[index].showDescription;
+}
 
   constructor() { }
 
