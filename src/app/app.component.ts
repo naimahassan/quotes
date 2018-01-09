@@ -7,6 +7,6 @@ import {Quote} from './quote'
 })
 export class AppComponent {
   quote = [
-    new Quote(1, 'ignorance is bliss', 'treasure it'),
+    new Quote(1, 'ignorance is bliss', 'treasure it',new Date(2018,1,9)),
   ]
 }

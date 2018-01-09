@@ -7,15 +7,27 @@ import {Quote} from '../quote'
 })
 export class QuoteComponent implements OnInit {
   quote = [
-    new Quote(1, 'ignorance is bliss', 'treasure it',new Date(2018,1,20)),
+    new Quote(1, 'ignorance is bliss', 'treasure it',new Date(2018,1,8)),
   ]
+  addNewquote(quote){
+    let quoteLength = this.quote.length;
+    quote.id=quoteLength+1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quote.push(quote)
+
+}
+
   toogleDetails(index){
     this.quote[index].showDescription = !this.quote[index].showDescription;
 }
-completeQuote(isComplete,index){
+deleteGoal(isComplete,index){
   if (isComplete){
-    this.quote.splice(index,1);
-    }
+      let toDelete=confirm(`Are you sure you want to delete ${this.quote[index].name}`)
+      
+      if(toDelete){
+          this.quote.splice(index,1)
+      }
+  }
 }
   constructor() { }
 
